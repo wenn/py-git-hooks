@@ -1,0 +1,14 @@
+#!/bin/sh
+# Please be aware that this script will be ran in the context of the actual hook located in .git/hooks/
+
+
+top_dir="$(git rev-parse --show-toplevel)"
+scripts="${top_dir}/git_hooks/scripts/"
+
+
+run_python() {
+    # Need to tell python scripts where to look at when import modules from edde/git_hooks
+    PYTHONPATH="${top_dir}:${PYTHONPATH}" python "${scripts}${1}.py" "${@}"
+}
+
+run_python "lint"
