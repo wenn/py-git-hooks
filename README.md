@@ -1,5 +1,4 @@
-## A place for git-hooks to prosper
-( *nix platforms only .. )
+## Simple install Git hooks with python.
 
 Get started: ```python git_hooks/install.py```
 
